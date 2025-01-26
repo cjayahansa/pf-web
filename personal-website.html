@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Electronic & Computer Science Engineering</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+       <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Technical Skills</a></li>
+                <li><a href="#expertise">Core Expertise</a></li>
+                <li><a href="#projects">Innovative Projects</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+        </nav>
+
+        <header id="home">
+            <div class="container">
+                <h1>Electronic & Computer Science Engineering</h1>
+                <p>Bridging Hardware and Software Innovation</p>
+                <a href="#contact" class="btn">Collaborate</a>
+            </div>
+        </header>
+
+        <section id="skills" class="container">
+            <h2>Technical Skill Set</h2>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Hardware Design</h3>
+                    <p>PCB Design, FPGA, Embedded Systems</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Software Development</h3>
+                    <p>Python, C++, Java, Web Technologies</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>System Architecture</h3>
+                    <p>Computer Networks, Cloud Computing</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise" class="container">
+            <h2>Core Areas of Expertise</h2>
+            <div class="skill-categories">
+                <div class="skill-category">
+                    <h3>Electronic Engineering</h3>
+                    <ul>
+                        <li>Analog and Digital Circuit Design</li>
+                        <li>Signal Processing</li>
+                        <li>Embedded Systems Development</li>
+                        <li>Microcontroller Programming</li>
+                        <li>RF and Communication Systems</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Computer Science Engineering</h3>
+                    <ul>
+                        <li>Software Architecture</li>
+                        <li>Machine Learning & AI</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Cloud Computing</li>
+                        <li>Cybersecurity</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Integrated Technologies</h3>
+                    <ul>
+                        <li>IoT System Design</li>
+                        <li>Embedded Machine Learning</li>
+                        <li>Real-time Systems</li>
+                        <li>Edge Computing</li>
+                        <li>Distributed Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="container">
+            <h2>Innovative Engineering Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="IoT Project" />
+                    <div class="container">
+                        <h3>Smart IoT Sensor Network</h3>
+                        <p>
+                            Developed an advanced IoT system combining embedded hardware with machine learning
+                            algorithms for real-time data analysis
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Robotics Project" />
+                    <div class="container">
+                        <h3>Autonomous Robotics Platform</h3>
+                        <p>
+                            Designed a comprehensive robotic system with custom hardware and intelligent software
+                            control
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="AI Project" />
+                    <div class="container">
+                        <h3>Edge AI Computing Device</h3>
+                        <p>Created a low-power embedded device for real-time machine learning applications</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Let's Connect and Innovate</h2>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Email Address" required />
+                <textarea placeholder="Project Inquiry or Collaboration Idea" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Proposal</button>
+            </form>
+        </section>
+
+        <script>
+            // Navbar Behavior
+            let lastScrollTop = 0;
+            const navbar = document.getElementById("navbar");
+
+            window.addEventListener("scroll", () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    navbar.style.transform = "translateY(-100%)";
+                } else {
+                    navbar.style.transform = "translateY(0)";
+                }
+                lastScrollTop = scrollTop;
+            });
+
+            // Form Submission Handler
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData.entries());
+
+                if (data.name && data.email && data.message) {
+                    console.log("Proposal received:", data);
+                    alert("Your proposal has been submitted successfully!");
+                    e.target.reset();
+                }
+            });
+
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth",
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
